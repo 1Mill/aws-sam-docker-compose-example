@@ -13,4 +13,6 @@ RUN \
 	pip3 install awscli && \
 	pip3 install aws-sam-cli
 
-ENTRYPOINT ["/bin/sh"]
+WORKDIR /app
+
+CMD [ "echo Hello World!" ]

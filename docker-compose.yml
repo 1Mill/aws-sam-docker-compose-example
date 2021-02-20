@@ -3,10 +3,9 @@ version: '3'
 services:
   lambdas:
     build: .
-    entrypoint: sam local start-lambda --host 0.0.0.0 --port 3000 --docker-volume-basedir $$(pwd)
+    entrypoint: sam local start-lambda --host 0.0.0.0 --port 3000 --docker-volume-basedir /s/projects/aws-sam-docker-compose-example
     ports:
       - 3000:3000
     volumes:
-      - ./:/var/opt
+      - ./:/app
       - /var/run/docker.sock:/var/run/docker.sock
-    working_dir: /var/opt
